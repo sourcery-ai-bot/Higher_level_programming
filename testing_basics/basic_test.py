@@ -43,7 +43,7 @@ def factorial(n):
     OverflowError: n too large
     """
     import math
-    if not n >= 0:
+    if n < 0:
         raise ValueError("n must be >= 0")
     if math.floor(n) != n:
         raise ValueError("n must be exact integer")

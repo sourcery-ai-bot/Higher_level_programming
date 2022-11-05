@@ -39,7 +39,7 @@ class Rectangle:
             return string
 
         for i in range(self.__height):
-            for j in range(self.__width):
+            for _ in range(self.__width):
                 string += '#'
             if i < self.__height - 1:
                 string += '\n'
@@ -52,8 +52,7 @@ class Rectangle:
         Returns:+
             string (str): string to get
         """
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) +\
-            ")"
+        return f"Rectangle({str(self.__width)}, {str(self.__height)})"
 
     def __del__(self):
         """

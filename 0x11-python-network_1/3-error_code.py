@@ -5,6 +5,7 @@ Created on Mon Aug 24 07:02:53 2020
 
 @author: Robinson Montes
 """
+
 from urllib.request import urlopen
 from urllib.error import HTTPError
 from sys import argv
@@ -16,4 +17,4 @@ if __name__ == "__main__":
         with urlopen(url) as response:
             print(response.read().decode('utf-8'))
     except HTTPError as e:
-        print('Error code: {}'.format(e.code))
+        print(f'Error code: {e.code}')

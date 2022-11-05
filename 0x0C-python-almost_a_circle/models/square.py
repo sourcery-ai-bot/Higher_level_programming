@@ -29,10 +29,7 @@ class Square(Rectangle):
         Return:
             The string: [class_name] (id) x/y - size
         """
-        string = "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
-                                               self.id, self.x, self.y,
-                                               self.size)
-        return string
+        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     def update(self, *args, **kwargs):
         """
@@ -42,7 +39,7 @@ class Square(Rectangle):
             args (list): inputted arguments to updating rectangle class
             kwargs (dict): inputted arguments tu updating rectangle class
         """
-        if args is not None and len(args) != 0:
+        if args is not None and args:
             for i, arg in enumerate(args):
                 if i == 0:
                     self.id = arg

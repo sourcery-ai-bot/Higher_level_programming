@@ -31,7 +31,7 @@ class Square(BaseGeometry):
         Returns:
             Return width/height
         """
-        return '[Square] ' + str(self.__size) + '/' + str(self.__size)
+        return f'[Square] {str(self.__size)}/{str(self.__size)}'
 
     def area(self):
         """

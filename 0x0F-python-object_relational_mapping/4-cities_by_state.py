@@ -4,6 +4,7 @@ Created on Sat Aug  8 09:05:11 2020
 
 @author: Robinson Montes
 """
+
 import MySQLdb
 import sys
 
@@ -11,7 +12,7 @@ import sys
 if __name__ == '__main__':
     args = sys.argv
     if len(args) != 4:
-        print("Usage: {} username password database_name".format(args[0]))
+        print(f"Usage: {args[0]} username password database_name")
         exit(1)
     username = args[1]
     password = args[2]

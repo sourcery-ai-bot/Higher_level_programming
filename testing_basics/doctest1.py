@@ -14,7 +14,7 @@ def area(base, altura):
     'El área del triángulo es: 13.5'
 
     """
-    return "El área del triángulo es: " + str((base * altura) / 2)
+    return f"El área del triángulo es: {str(base * altura / 2)}"
 
 import doctest
 doctest.testmod()

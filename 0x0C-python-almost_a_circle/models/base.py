@@ -55,11 +55,10 @@ class Base:
         Return:
             json object to save in file
         """
-        file_name = cls.__name__ + ".json"
+        file_name = f"{cls.__name__}.json"
         string = []
         if list_objs is not None:
-            for i in list_objs:
-                string.append(cls.to_dictionary(i))
+            string.extend(cls.to_dictionary(i) for i in list_objs)
         with open(file_name, 'w', encoding='utf-8') as file:
             file.write(cls.to_json_string(string))
 
@@ -104,7 +103,7 @@ class Base:
         Return:
             A list of instances
         """
-        file_name = cls.__name__ + ".json"
+        file_name = f"{cls.__name__}.json"
         json_obj = []
         try:
             with open(file_name, 'r', encoding='utf-8') as file:

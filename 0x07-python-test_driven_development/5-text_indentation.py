@@ -22,7 +22,7 @@ def text_indentation(text):
 
     string = text.replace('.', '.\n\n').replace(':', ':\n\n')\
         .replace('?', '?\n\n')
-    for i in range(len(text)):
+    for _ in range(len(text)):
         string = string.replace('\n ', '\n')
 
     print(string, end='')

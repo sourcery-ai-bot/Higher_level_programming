@@ -14,8 +14,6 @@ else:
     argumentStr += 's:'
 print(argumentStr.format(argc))
 
-i = 0
-for argument in sys.argv:
+for i, argument in enumerate(sys.argv):
     if i != 0:
         print("{:d}: {:s}".format(i, argument))
-    i += 1

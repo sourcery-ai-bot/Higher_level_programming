@@ -17,8 +17,9 @@ def compruebamail(mailUsuario):
 
     """
     arroba = mailusuario.count('@')
-    if arroba != 1 or mailusuario.rfind('@') == (len(mailusuario) - 1) or mailusuario.find('@') == 0:
-        return False
-    else:
-        return True
+    return (
+        arroba == 1
+        and mailusuario.rfind('@') != len(mailusuario) - 1
+        and mailusuario.find('@') != 0
+    )
 

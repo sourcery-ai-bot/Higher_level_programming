@@ -42,12 +42,12 @@ class Rectangle(Base):
         """
         Prints the # char Rectangle
         """
-        for i in range(self.y):
+        for _ in range(self.y):
             print()
-        for i in range(self.height):
-            for j in range(self.x):
+        for _ in range(self.height):
+            for _ in range(self.x):
                 print(' ', end='')
-            for j in range(self.width):
+            for _ in range(self.width):
                 print('#', end='')
             print()
 
@@ -58,10 +58,7 @@ class Rectangle(Base):
         Return:
             The string: [class_name] (id) x/y - width/height
         """
-        string = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
-                                                  self.id, self.x, self.y,
-                                                  self.width, self.height)
-        return string
+        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
         """
@@ -71,7 +68,7 @@ class Rectangle(Base):
             args (list): inputted arguments to updating rectangle class
             kwargs (dict): inputted arguments tu updating rectangle class
         """
-        if args is not None and len(args) != 0:
+        if args is not None and args:
             for i, arg in enumerate(args):
                 if i == 0:
                     self.id = arg
@@ -86,12 +83,12 @@ class Rectangle(Base):
 
         elif kwargs is not None and len(kwargs) != 0:
             for (key, value) in kwargs.items():
-                if key == "id":
+                if key == "height":
+                    self.height = value
+                elif key == "id":
                     self.id = value
                 elif key == "width":
                     self.width = value
-                elif key == "height":
-                    self.height = value
                 elif key == "x":
                     self.x = value
                 elif key == "y":

@@ -4,6 +4,7 @@ Created on Sat Aug  8 09:05:11 2020
 
 @author: Robinson Montes
 """
+
 import MySQLdb
 import sys
 
@@ -11,7 +12,7 @@ import sys
 if __name__ == '__main__':
     args = sys.argv
     if len(args) != 5:
-        print("Usage: {} username password database_name".format(args[0]))
+        print(f"Usage: {args[0]} username password database_name")
         exit(1)
     username = args[1]
     password = args[2]
@@ -24,12 +25,10 @@ if __name__ == '__main__':
                            (SELECT id FROM states WHERE name LIKE BINARY %s)\
                            ORDER BY cities.id;", (state_name, ))
     rows = cur.fetchall()
-    i = 1
-    for row in rows:
+    for i, row in enumerate(rows, start=1):
         print(row[0], end='')
         if i < num_rows:
             print(end=', ')
-        i += 1
     print()
     cur.close()
     db.close()
